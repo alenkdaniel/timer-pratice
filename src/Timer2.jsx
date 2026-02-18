@@ -18,12 +18,7 @@ const Timer2 = () => {
         }else if(direction==='backward'){
          stop()
             interValRef.current = setInterval(()=>{ //BackwardValue saves to intervalRef
-                 setNumber(prev=>{
-                    if(prev>1){// for restrict numbers goes to below 0 in backward
-                        return prev-1 ////decrement by 1
-                    }
-                    return 0
-                 }) 
+                 setNumber(prev=>(prev > 0 ? prev-1 : 0)) 
             },1000)  
            
         }
